@@ -1,7 +1,12 @@
 language: java
+sudo: false
+install: true
+addons:
+  sonarcloud:
+    organization: "spoorthyv-github"
+    token:
+      secure: "fb23aaa2b46da16e905768f207f7fe0da9eff227" 
 jdk:
-- oraclejdk8
-script: mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar \
-    -Dsonar.host.url=https://sonarcloud.io \
-    -Dsonar.organization=fb23aaa2b46da16e905768f207f7fe0da9eff227 \
-    -Dsonar.login=abcdef0123456789
+  - oraclejdk8
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
