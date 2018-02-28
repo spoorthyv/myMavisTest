@@ -1,6 +1,5 @@
 
 public class WeightConversion {
-
 	public double KilosToPounds (double kilos){
 		
 		return (kilos / 0.454);
